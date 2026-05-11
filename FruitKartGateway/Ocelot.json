@@ -1,0 +1,144 @@
+﻿{
+  "Routes": [
+
+    // ── AccountService — register/login (no auth) ─────────────────────────
+    {
+      "DownstreamPathTemplate": "/api/auth/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        { 
+          "Host": "localhost",
+          "Port": 8010
+        }
+      ],
+      "UpstreamPathTemplate": "/api/auth/{everything}",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+
+    // ── ImageService — Bearer required ────────────────────────────────────
+    {
+      "DownstreamPathTemplate": "/api/image/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8020
+        }
+      ],
+      "UpstreamPathTemplate": "/api/image/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+
+    // ── MenuService — GET public (no auth) ────────────────────────────────
+    {
+      "DownstreamPathTemplate": "/api/menuitem",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8030
+        }
+      ],
+      "UpstreamPathTemplate": "/api/menuitem",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/menuitem/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8030
+        }
+      ],
+      "UpstreamPathTemplate": "/api/menuitem/{id}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+
+    // ── MenuService — POST/PUT/DELETE Bearer required ─────────────────────
+    {
+      "DownstreamPathTemplate": "/api/menuitem",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8030
+        }
+      ],
+      "UpstreamPathTemplate": "/api/menuitem",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/menuitem/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8030
+        }
+      ],
+      "UpstreamPathTemplate": "/api/menuitem/{id}",
+      "UpstreamHttpMethod": [ "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+
+    // ── OrderService — Bearer required for all ────────────────────────────
+    {
+      "DownstreamPathTemplate": "/api/orderheader",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8040
+        }
+      ],
+      "UpstreamPathTemplate": "/api/orderheader",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/orderheader/{orderId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8040
+        }
+      ],
+      "UpstreamPathTemplate": "/api/orderheader/{orderId}",
+      "UpstreamHttpMethod": [ "GET", "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/orderdetails/{orderDetailsId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8040
+        }
+      ],
+      "UpstreamPathTemplate": "/api/orderdetails/{orderDetailsId}",
+      "UpstreamHttpMethod": [ "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    }
+
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:7000"
+  }
+}

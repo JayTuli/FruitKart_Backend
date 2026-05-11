@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="AuthService/AccountService.csproj" />
+  <Project Path="FruitKartGateway/FruitKartGateway.csproj" Id="47a1f85d-e358-4438-aba5-daab3701ee6b" />
+  <Project Path="ImageService/ImageService.csproj" Id="158d3f46-8f2d-4aa9-b044-a0af08e79e11" />
+  <Project Path="JWTAuth/JWTAuth.csproj" Id="3cc396af-12c4-4f90-a445-7a78f30a4aef" />
+  <Project Path="MenuServiceAPI/MenuServiceAPI.csproj" Id="cac6d876-fc91-4ad2-aa30-f8b2b7a5f31b" />
+  <Project Path="OrderService/OrderService.csproj" Id="b8a39172-d004-4aa9-8e67-1e037b178bac" />
+</Solution>
