@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ImageService.Data
 {
+    // random 
     public class FruitImageDbContext : DbContext
     {
         public FruitImageDbContext(DbContextOptions<FruitImageDbContext>options):base(options) { }
