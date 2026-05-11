@@ -1,6 +1,0 @@
-@FruitKart_Gateway_HostAddress = http://localhost:5119
-
-GET {{FruitKart_Gateway_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
