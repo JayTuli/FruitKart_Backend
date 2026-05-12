@@ -4,7 +4,9 @@ using AccountService.Data;
 using AccountService.Models;
 using AccountService.Repository;
 using Microsoft.AspNetCore.Identity; 
-
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 
 var builder = WebApplication.CreateBuilder(args);

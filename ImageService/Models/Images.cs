@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ImageService.Models
 {
@@ -7,10 +6,19 @@ namespace ImageService.Models
     {
         [Key]
         public int ImageId { get; set; }
+
+        [Required]
+        [MaxLength(200)]
         public string ImageName { get; set; }
+
         [Required]
         public string ImageUrl { get; set; }
+
+        //[Required]
+        //public int FruitId { get; set; }
         [Required]
-        public int FruitId { get; set; }
+        public string BlobName { get; set; } = string.Empty;
+
+        public DateTime UploadedAt { get; set; } = DateTime.UtcNow;
     }
 }

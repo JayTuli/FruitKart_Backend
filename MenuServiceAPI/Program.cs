@@ -3,6 +3,7 @@ using MenuServiceAPI.MappingProfile;
 using MenuServiceAPI.Repository;
 using Microsoft.EntityFrameworkCore;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<MenuDbContext>(opt =>

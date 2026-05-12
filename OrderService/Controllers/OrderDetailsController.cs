@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Net;
+using OrderService.Repository;
+using OrderService.Model.DTO;
 
 namespace OrderService.Controllers
 {
@@ -20,7 +22,7 @@ namespace OrderService.Controllers
         [HttpPut("{orderDetailsId:int}")]
         public async Task<ActionResult<ApiResponse>> UpdateOrder(
             int orderDetailsId,
-            [FromBody] OrderDetailsUpdateDTO orderDetailsDTO)
+            [FromBody] OrderDetailUpdateDTO orderDetailsDTO)
         {
             try
             {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OrderService.Model;
-using OrderService.Model.Dto;
-using OrderService.Repository.Interfaces;
+using OrderService.Model.DTO;
+using OrderService.Repository;
 using System.Net;
 
 namespace OrderService.Controllers
